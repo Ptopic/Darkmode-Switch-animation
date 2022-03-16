@@ -1,0 +1,185 @@
+@import url('https://fonts.googleapis.com/css2?family=Arvo&display=swap');
+
+@keyframes testBack {
+    0% {
+        transform: translateX(0);
+        transform: rotate(0deg);
+        opacity: 1;
+    }
+    
+    50%
+    {
+        opacity: 1;
+        transform: rotate(360deg);
+    }
+
+    100% {
+        transform: translateX(112px);
+        opacity: 0;
+    }
+}
+
+
+@keyframes test2Back {
+    0% {
+        transform: translateX(0);
+        transform: rotate(0deg);
+        opacity: 1;
+    }
+    
+    50% {
+        opacity: 1;
+        transform: rotate(360deg);
+    }
+
+
+    100% {
+        transform: translateX(-112px);
+        opacity: 0;
+    }
+}
+
+@keyframes opacity {
+    0% {
+        opacity: 0;
+    }
+    
+    70% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+
+
+body {
+    background-color: #ECEBE4;
+    color: black;
+    transition: all 2s ease-in;
+    overflow: hidden;
+    font-family: 'Arvo', serif;
+    font-size: 10px;
+}
+
+body.dark {
+    background-color: black;
+    color: white;
+    transition: all 2s ease-in;
+    overflow: hidden;
+    font-family: 'Arvo', serif;
+    font-size: 10px;
+}
+
+.flex-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 58vh;
+}
+
+.btn-container {
+    background-color: #373F51;
+    border-radius: 100px;
+    width: 200px;
+    height: 95px;
+    outline: none;
+    border: none;
+    position: relative;
+    display: flex;
+}
+
+.btn-container img {
+    position: absolute;
+}
+
+.img-container-sun {
+    display: block;
+    visibility: visible;
+    position: relative;
+    left: -8px;
+    border-radius: 100px;
+    width: 95px;
+    height: 95px;
+    background-color: white;
+    opacity: 1;
+
+    animation: opacity 1.8s cubic-bezier(.67,-0.07,.86,.5);
+}
+
+.img-container-sun.active {
+    display: block;
+    visibility: visible;
+    position: relative;
+    left: -8px;
+    border-radius: 100px;
+    width: 95px;
+    height: 95px;
+    opacity: 0;
+
+    animation: testBack 1.5s ease;
+
+
+
+    /* transition: all 1s ease;  
+    transform: translateX(112px); */
+}
+
+.img-container-moon {
+    display: block;
+    visibility: visible;
+    position: relative;
+    left: 10px;
+    border-radius: 100px;
+    width: 95px;
+    height: 95px;
+    background-color: white;
+    /* opacity: 1; */
+
+    animation: opacity 1.5s cubic-bezier(.67,-0.07,.86,.5);
+
+
+}
+
+.img-container-moon.active {
+    display: block;
+    visibility: visible;
+    position: relative;
+    left: 10px;
+    border-radius: 100px;
+    width: 95px;
+    height: 95px;
+    background-color: white;
+    opacity: 0;
+
+    animation: test2Back 1.5s ease;
+
+
+    /* transform: translateX(-112px); */
+}
+
+/* 
+.img-container {
+    transition: all 1s ease;  
+    animation: test2 1s ease;
+    transform: translateX(115px);
+} */
+
+
+.img-container {
+    display: none;
+    visibility: hidden;
+}
+
+img[src="sun.png"]{
+    left: -15px;
+    top: -16px;
+}
+
+
+img[src="moon.png"]{
+    left: -24px;
+    top: -24px;
+}
